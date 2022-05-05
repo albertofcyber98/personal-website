@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div>
             <Navbar />
-            <div className='pl-8 pr-5 md:pl-20 md:pr-20 mt-[80px]  md:mt-[100px] flex justify-between'>
+            <div className='pl-8 pr-5 lg:pl-[50px] xl:pl-[200px] md:pl-20 md:pr-20 mt-[80px]  md:mt-[100px] flex justify-between'>
                 <div>
                     <h1 className='text-4xl md:text-5xl font-bold transition-all duration-1000'><span className='text-white'>Hi, </span>I’m Yohanes Albert</h1>
                     <h2 className='text-white mt-4 text-xl md:text-2xl transition-all duration-1000'>Full-Stack Web Developer</h2>
@@ -35,7 +35,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='w-2/6 mt-[-50px] mr-[190px] hidden lg:block'>
-                    <img src={profil} alt="Profile Photo"/>
+                    <img src={profil} alt="Profile"/>
                 </div>
             </div>
         </div>
