@@ -18,8 +18,8 @@ const About = () => {
                                     I am a person who is very interested in technology, especially
                                     what I focus on is web development. The rapid development of
                                     technology makes me very excited to hone my skills</p>
-                                <p className="pt-3 pb-2">
-                                    I've also learned a few skills, including:
+                                <p className="pt-3 pb-2 font-medium">
+                                    Service offerings I offer:
                                 </p>
                                 {
                                     DataChecks.map((DataCheck) => (
