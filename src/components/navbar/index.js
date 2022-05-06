@@ -10,7 +10,7 @@ const Navbar = () => {
     ]
     let [open , setOpen] = useState(false);
     return (
-        <div className='h-[80px] bg-[#2D2E37]'>
+        <div className={`h-[80px] bg-[#2D2E37] ${open?'mb-[180px]':''}`}>
             <div className='px-2 flex justify-between items-center w-full h-full'>
                 <div className='flex items-center'>
                     <Link to="/">

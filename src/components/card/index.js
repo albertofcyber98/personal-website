@@ -15,7 +15,7 @@ const Card = (props) => {
     return (
         <div className="bg-white rounded h-fit hover:drop-shadow-[0_2px_6px_rgba(0,188,154,0.7)] mb-5 sm:mx-2 w-full sm:w-[45%] md:w-[45%] lg:w-[30%] xl:w-[22%] transition-all duration-500">
             <div className='overflow-hidden'>
-                <img src={dataProjects[props.no].imgProject} className="rounded cursor-pointer scale-100 transition-all duration-500 ease-in-out hover:scale-125" alt="Project" />
+                <img src={dataProjects[props.no].imgProject} className="rounded cursor-pointer md:scale-100 transition-all duration-500 ease-in-out hover:scale-125" alt="Project" />
             </div>
             <hr/>
             <div className='pt-6 px-4 md:px-4'>

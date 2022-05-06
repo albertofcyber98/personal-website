@@ -12,7 +12,7 @@ const Project = () => {
         <div>
             <Navbar />
                 <h1 className="text-center font-medium text-3xl">My Portofolio</h1>
-            <div className="justify-center mt-8 mx-8 sm:mx-2 md:mx-5 flex-wrap sm:flex md:flex-wrap columns">
+            <div className="justify-center mt-8 mx-8 mb-16 sm:mx-2 md:mx-5 flex-wrap sm:flex md:flex-wrap columns">
                 {
                     Datas.map((data)=>(<Card key={data.id} no={data.id} />))
                 }
