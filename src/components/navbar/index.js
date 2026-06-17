@@ -1,44 +1,74 @@
-import {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 
 const Navbar = () => {
-    let Links = [
-        { id:1, name: 'Home', link: '/' },
-        { id:2, name: 'About', link: '/about' },
-        { id:3, name: 'Portolio', link: '/portofolio' }
+    const Links = [
+        { id: 1, name: 'Home', link: '/' },
+        { id: 2, name: 'About', link: '/about' },
+        { id: 3, name: 'Portfolio', link: '/portofolio' },
     ]
-    let [open , setOpen] = useState(false);
+
+    const [open, setOpen] = useState(false)
+
     return (
-        <div className={`h-[80px] bg-[#2D2E37] ${open?'mb-[180px]':''}`}>
-            <div className='px-2 flex justify-between items-center w-full h-full'>
-                <div className='flex items-center'>
-                    <Link to="/">
-                        <h1 className='pl-5 md:pl-6 lg:pl-8 xl:pl-20 text-2xl logo-custom'><span className='text-white'>Yohanes.</span>Albert</h1>
-                    </Link>
-                </div>
-                <div className='pr-10 md:pr-2 lg:pr-4 xl:pr-20'>
-                    <ul className='hidden md:flex'>
-                        {
-                            Links.map((Data) => (
-                                <li key={Data.id} className='px-5 cursor-pointer text-white hover:text-gray-600'><Link to={Data.link} >{Data.name}</Link></li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            <div className='md:hidden text-3xl pr-5 pt-2 cursor-pointer' onClick={()=>setOpen(!open)}>
-                <ion-icon name={!open ? 'menu': 'close'}></ion-icon>
+        <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#070B14]/80 backdrop-blur-xl">
+            <div className="mx-auto flex h-[80px] w-full items-center justify-between px-8 md:px-20 xl:px-[200px]">
+                <Link to="/" onClick={() => setOpen(false)}>
+                    <h1 className="font-logo text-2xl font-bold tracking-wide">
+                        <span className="text-white">ones</span>
+                        <span className="bg-gradient-to-r from-cyan-300 to-emerald-400 bg-clip-text text-transparent">
+                            daily
+                        </span>
+                        <span className="text-cyan-300">_</span>
+                    </h1>
+                </Link>
+
+                <ul className="hidden items-center gap-10 md:flex">
+                    {Links.map((item) => (
+                        <li key={item.id}>
+                            <Link
+                                to={item.link}
+                                className="text-sm font-medium text-gray-300 transition-all duration-300 hover:text-cyan-300"
+                            >
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+
+                <button
+                    type="button"
+                    className="text-3xl text-white md:hidden"
+                    onClick={() => setOpen(!open)}
+                >
+                    <ion-icon name={open ? 'close' : 'menu'} />
+                </button>
             </div>
+
+            <div
+                className={`absolute left-0 top-[80px] w-full border-b border-white/10 bg-[#070B14]/95 px-8 py-5 shadow-xl backdrop-blur-xl transition-all duration-300 md:hidden ${
+                    open
+                        ? 'visible translate-y-0 opacity-100'
+                        : 'invisible -translate-y-4 opacity-0'
+                }`}
+            >
+                <ul className="flex flex-col gap-2">
+                    {Links.map((item) => (
+                        <li key={item.id}>
+                            <Link
+                                to={item.link}
+                                onClick={() => setOpen(false)}
+                                className="block rounded-xl px-4 py-3 text-gray-300 transition-all duration-300 hover:bg-white/5 hover:text-cyan-300"
+                            >
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
             </div>
-            <ul className={`md:hidden bg-[#2D2E37] ${!open ? 'hidden' : 'absolute bg-color-primary w-full mt-[-10px] pb-4 shadow-md'}`}>
-                {
-                    Links.map((DataMini) => (<Link key={DataMini.id} to={DataMini.link}>
-                        <li className='px-5 cursor-pointer py-3 text-white hover:text-gray-600 hover:bg-white'>{DataMini.name}</li></Link>
-                    ))
-                }
-            </ul>
-        </div>
+        </nav>
     )
 }
 
-export default Navbar;
+export default Navbar

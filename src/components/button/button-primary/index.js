@@ -1,10 +1,11 @@
 const ButtonPrimary = () => {
     return (
-        <a href='https://wa.link/h3yn2i' target='_blank' rel='noreferrer'>
-            <button className='mt-10 px-8 sm:px-10 text-base md:text-lg py-3 bg-[#00BC9A] text-white rounded filder:drop-shadow(0 2px 10px rgb(1,188,154/0.2)) hover:bg-[#049A7F] transition-all duration-1000'>
-                Let's work                
+        <a href="https://wa.link/h3yn2i" target="_blank" rel="noreferrer">
+            <button className="mt-10 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 px-8 py-3 text-base font-semibold text-[#06111F] shadow-lg shadow-cyan-400/20 transition-all duration-300 hover:-translate-y-1 hover:from-cyan-300 hover:to-emerald-300 hover:shadow-cyan-400/30 md:px-10 md:text-lg">
+                Let&apos;s Work Together
             </button>
         </a>
     )
 }
-export default ButtonPrimary;
+
+export default ButtonPrimary
